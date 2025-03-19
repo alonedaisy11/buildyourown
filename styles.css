@@ -18,7 +18,8 @@ body {
     background: rgba(255, 255, 255, 0.03);
     padding: 3rem;
     border-radius: 2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 0 32px rgba(255, 215, 0, 0.05);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 215, 0, 0.1);
     max-width: 450px;
@@ -97,6 +98,13 @@ h1 {
     stroke-dasharray: 565.48;
     stroke-dashoffset: 0;
     filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0% { filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5)); }
+    50% { filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7)); }
+    100% { filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5)); }
 }
 
 .controls, .mode-toggle {
@@ -135,11 +143,13 @@ button:active {
     background: linear-gradient(145deg, #FFD700, #FDB900);
     color: black;
     font-weight: 600;
+    animation: pulse 2s infinite;
 }
 
 #start:hover {
     background: linear-gradient(145deg, #FDB900, #FFD700);
     box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    animation: none;
 }
 
 #pause {
@@ -189,4 +199,10 @@ button:active {
     font-size: 1rem;
     letter-spacing: 0.5px;
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 } 
