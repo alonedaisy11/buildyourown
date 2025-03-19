@@ -25,8 +25,38 @@ function createStars() {
     }
 }
 
-// Initialize stars
+// Create shooting stars
+function createShootingStar() {
+    const star = document.createElement('div');
+    star.className = 'shooting-star';
+    
+    // Random starting position at the top-right portion of the screen
+    const startX = Math.random() * window.innerWidth/2 + window.innerWidth/2;
+    const startY = Math.random() * window.innerHeight/2;
+    
+    star.style.left = startX + 'px';
+    star.style.top = startY + 'px';
+    
+    document.body.appendChild(star);
+    
+    // Remove the star after animation
+    setTimeout(() => {
+        star.remove();
+    }, 1000);
+}
+
+// Create shooting stars randomly
+function initShootingStars() {
+    setInterval(() => {
+        if (Math.random() < 0.3) { // 30% chance every interval
+            createShootingStar();
+        }
+    }, 2000); // Check every 2 seconds
+}
+
+// Initialize stars and shooting stars
 createStars();
+initShootingStars();
 
 class PomodoroTimer {
     constructor() {

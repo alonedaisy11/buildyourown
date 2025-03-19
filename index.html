@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How long can jojo stay off the ice</title>
-    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
     <div class="container">
@@ -14,34 +14,53 @@
             <div class="progress-ring">
                 <svg width="300" height="300" viewBox="0 0 300 300">
                     <defs>
-                        <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#FFD700" />
-                            <stop offset="50%" style="stop-color:#FDB900" />
+                        <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#FFF7C2" />
+                            <stop offset="40%" style="stop-color:#FFD700" />
+                            <stop offset="90%" style="stop-color:#FDB900" />
                             <stop offset="100%" style="stop-color:#FF8C00" />
-                        </linearGradient>
+                        </radialGradient>
                         <filter id="glow">
-                            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                            <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
                             <feMerge>
                                 <feMergeNode in="coloredBlur"/>
                                 <feMergeNode in="SourceGraphic"/>
                             </feMerge>
                         </filter>
                     </defs>
-                    <!-- Sun Rays -->
-                    <g class="sun-rays">
-                        <path d="M150,50 L150,20" stroke="#FFD700" stroke-width="4"/>
-                        <path d="M150,280 L150,250" stroke="#FFD700" stroke-width="4"/>
-                        <path d="M50,150 L20,150" stroke="#FFD700" stroke-width="4"/>
-                        <path d="M280,150 L250,150" stroke="#FFD700" stroke-width="4"/>
-                        <path d="M80,80 L60,60" stroke="#FFD700" stroke-width="4"/>
-                        <path d="M220,220 L240,240" stroke="#FFD700" stroke-width="4"/>
-                        <path d="M220,80 L240,60" stroke="#FFD700" stroke-width="4"/>
-                        <path d="M80,220 L60,240" stroke="#FFD700" stroke-width="4"/>
+                    <!-- Long Sun Rays -->
+                    <g class="sun-rays-long">
+                        <path d="M150,30 L150,0" stroke="#FFD700" stroke-width="3"/>
+                        <path d="M150,300 L150,270" stroke="#FFD700" stroke-width="3"/>
+                        <path d="M30,150 L0,150" stroke="#FFD700" stroke-width="3"/>
+                        <path d="M300,150 L270,150" stroke="#FFD700" stroke-width="3"/>
+                        <path d="M70,70 L45,45" stroke="#FFD700" stroke-width="3"/>
+                        <path d="M230,230 L255,255" stroke="#FFD700" stroke-width="3"/>
+                        <path d="M230,70 L255,45" stroke="#FFD700" stroke-width="3"/>
+                        <path d="M70,230 L45,255" stroke="#FFD700" stroke-width="3"/>
+                    </g>
+                    <!-- Short Sun Rays -->
+                    <g class="sun-rays-short">
+                        <path d="M150,60 L150,40" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M150,260 L150,240" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M60,150 L40,150" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M260,150 L240,150" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M90,90 L75,75" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M210,210 L225,225" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M210,90 L225,75" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M90,210 L75,225" stroke="#FFD700" stroke-width="4"/>
+                        <!-- Additional diagonal rays -->
+                        <path d="M115,70 L105,55" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M185,230 L195,245" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M230,115 L245,105" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M70,185 L55,195" stroke="#FFD700" stroke-width="4"/>
                     </g>
                     <!-- Background circle -->
                     <circle class="progress-ring-circle-bg" cx="150" cy="150" r="90"/>
                     <!-- Progress circle -->
                     <circle class="progress-ring-circle" cx="150" cy="150" r="90"/>
+                    <!-- Inner glow circle -->
+                    <circle class="inner-glow" cx="150" cy="150" r="85" fill="url(#sunGradient)" filter="url(#glow)" opacity="0.3"/>
                 </svg>
             </div>
         </div>
@@ -58,6 +77,6 @@
             <p>Sessions completed: <span id="sessions">0</span></p>
         </div>
     </div>
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html> 

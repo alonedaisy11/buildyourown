@@ -95,7 +95,7 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: pulse-glow 3s infinite;
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
 }
 
 .sun-rays {
@@ -236,4 +236,67 @@ button:active {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
+}
+
+@keyframes shooting-star {
+    0% {
+        transform: translateX(0) translateY(0) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-500px) translateY(500px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+.shooting-star {
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    animation: shooting-star 1s linear forwards;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.shooting-star::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+}
+
+@keyframes rotate-long {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotate-short {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+@keyframes sun-pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.5; }
+    100% { opacity: 0.3; }
+}
+
+.sun-rays-long {
+    animation: rotate-long 30s linear infinite;
+    transform-origin: center;
+    opacity: 0.5;
+}
+
+.sun-rays-short {
+    animation: rotate-short 20s linear infinite;
+    transform-origin: center;
+    opacity: 0.7;
+}
+
+.inner-glow {
+    animation: sun-pulse 3s ease-in-out infinite;
 } 
