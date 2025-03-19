@@ -1,3 +1,33 @@
+// Create starry background
+function createStars() {
+    const starsContainer = document.createElement('div');
+    starsContainer.className = 'stars';
+    document.body.appendChild(starsContainer);
+
+    const numberOfStars = 200;
+    for (let i = 0; i < numberOfStars; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        // Random position
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        
+        // Random size
+        const size = Math.random() * 2;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        
+        // Random twinkle animation
+        star.style.animation = `twinkle ${2 + Math.random() * 3}s infinite ${Math.random() * 2}s`;
+        
+        starsContainer.appendChild(star);
+    }
+}
+
+// Initialize stars
+createStars();
+
 class PomodoroTimer {
     constructor() {
         this.workTime = 25 * 60; // 25 minutes in seconds
