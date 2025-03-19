@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How long can jojo stay off the ice</title>
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
     <div class="container">
@@ -12,15 +12,36 @@
         <div class="timer">
             <div class="time-display">60:00</div>   
             <div class="progress-ring">
-                <svg width="200" height="200">
+                <svg width="300" height="300" viewBox="0 0 300 300">
                     <defs>
-                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#FFD700" />
-                            <stop offset="100%" style="stop-color:#FDB900" />
+                            <stop offset="50%" style="stop-color:#FDB900" />
+                            <stop offset="100%" style="stop-color:#FF8C00" />
                         </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
                     </defs>
-                    <circle class="progress-ring-circle-bg" cx="100" cy="100" r="90"></circle>
-                    <circle class="progress-ring-circle" cx="100" cy="100" r="90"></circle>
+                    <!-- Sun Rays -->
+                    <g class="sun-rays">
+                        <path d="M150,50 L150,20" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M150,280 L150,250" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M50,150 L20,150" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M280,150 L250,150" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M80,80 L60,60" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M220,220 L240,240" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M220,80 L240,60" stroke="#FFD700" stroke-width="4"/>
+                        <path d="M80,220 L60,240" stroke="#FFD700" stroke-width="4"/>
+                    </g>
+                    <!-- Background circle -->
+                    <circle class="progress-ring-circle-bg" cx="150" cy="150" r="90"/>
+                    <!-- Progress circle -->
+                    <circle class="progress-ring-circle" cx="150" cy="150" r="90"/>
                 </svg>
             </div>
         </div>
@@ -37,6 +58,6 @@
             <p>Sessions completed: <span id="sessions">0</span></p>
         </div>
     </div>
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html> 
