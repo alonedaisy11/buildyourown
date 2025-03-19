@@ -73,7 +73,7 @@ h1 {
 
 .progress-ring-circle {
     fill: none;
-    stroke: #6366f1;
+    stroke: #FFD700;
     stroke-width: 10;
     stroke-linecap: round;
     transform: rotate(-90deg);
@@ -113,13 +113,13 @@ button:active {
 }
 
 #start {
-    background-color: #6366f1;
-    color: white;
+    background-color: #FFD700;
+    color: black;
 }
 
 #start:hover {
-    background-color: #4f46e5;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    background-color: #DAA520;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
 }
 
 #pause {
@@ -157,9 +157,9 @@ button:active {
 }
 
 .mode-toggle button.active {
-    background-color: #6366f1;
-    color: white;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    background-color: #FFD700;
+    color: black;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
 }
 
 .stats {
