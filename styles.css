@@ -81,6 +81,7 @@ h1 {
     transition: stroke-dashoffset 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     stroke-dasharray: 565.48;
     stroke-dashoffset: 0;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
 }
 
 .controls, .mode-toggle {
@@ -113,13 +114,15 @@ button:active {
 }
 
 #start {
-    background-color: #FFD700;
+    background: linear-gradient(145deg, #FFD700, #FDB900);
     color: black;
+    border: 1px solid #FFD700;
 }
 
 #start:hover {
-    background-color: #DAA520;
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+    background: linear-gradient(145deg, #FDB900, #FFD700);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    transform: translateY(-1px);
 }
 
 #pause {
@@ -157,9 +160,10 @@ button:active {
 }
 
 .mode-toggle button.active {
-    background-color: #FFD700;
+    background: linear-gradient(145deg, #FFD700, #FDB900);
     color: black;
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    border: 1px solid #FFD700;
 }
 
 .stats {
