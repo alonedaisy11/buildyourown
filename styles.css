@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #e1e1e1;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 400px;
+    width: 90%;
+}
+
+.container * {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.75rem;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+.timer {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 2rem;
+}
+
+.time-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.75rem;
+    font-weight: 700;
+    z-index: 1;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.2));
+}
+
+.progress-ring-circle-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 10;
+}
+
+.progress-ring-circle {
+    fill: none;
+    stroke: #6366f1;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    stroke-dasharray: 565.48;
+    stroke-dashoffset: 0;
+}
+
+.controls, .mode-toggle {
+    margin: 2rem 0;
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(5px);
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#start {
+    background-color: #6366f1;
+    color: white;
+}
+
+#start:hover {
+    background-color: #4f46e5;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+#pause {
+    background-color: #f43f5e;
+    color: white;
+}
+
+#pause:hover {
+    background-color: #e11d48;
+    box-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
+}
+
+#reset {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e1e1e1;
+}
+
+#reset:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+#break {
+    background-color: #10b981;
+    color: white;
+}
+
+#break:hover {
+    background-color: #059669;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.mode-toggle button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+}
+
+.mode-toggle button.active {
+    background-color: #6366f1;
+    color: white;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.stats {
+    margin-top: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+} 
